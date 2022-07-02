@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+    php56:
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      container_name: calc
+      restart: always
+      volumes:
+        - "./:/var/www/html"
+      working_dir: /var/www/html
