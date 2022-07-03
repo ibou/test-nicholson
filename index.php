@@ -1,6 +1,6 @@
 <?php
 
-use App\Classes\Calculator;
+use App\Services\Calculator;
 
 require_once './vendor/autoload.php';
 
@@ -9,8 +9,9 @@ $input = readline("Entrer un expression: ");
 // - (5-3) * (5+3)
 // - (6/3) * (5-3)
 // - (6+3) * (5-3)
-
+// $input = " 7/78";
+// $input = "(6+3) / (5-3)";
 printf("Expression saisie: %s\n", $input);
 $calculator = new Calculator();
-$calculator->calculate($input);
-printf("Resultat: %s\n", $calculator->getResult());
+$result = $calculator->calculate($input);
+printf("Resultat: %s\n", $result);
